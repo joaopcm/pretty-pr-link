@@ -3,11 +3,11 @@ import { copyActiveGithubLink } from "./utils/copy-active-github-link";
 import { ensureBrowserExtensionAccess } from "./utils/ensure-browser-extension-access";
 
 export default async function main() {
-	const canAccessBrowserExtension = await ensureBrowserExtensionAccess();
-	if (!canAccessBrowserExtension) {
-		return;
-	}
+  const canAccessBrowserExtension = await ensureBrowserExtensionAccess();
+  if (!canAccessBrowserExtension) {
+    return;
+  }
 
-	const { prefix } = await getPreferenceValues<Preferences.CopyFormattedLink>();
-	await copyActiveGithubLink({ prefix });
+  const { prefix } = await getPreferenceValues<Preferences.CopyFormattedLink>();
+  await copyActiveGithubLink({ prefix });
 }
